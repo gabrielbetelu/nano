@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+<body>
+            <!-- Preload the Whole Page -->
+            <div id="preloader">      
+            <div id="loading-animation">&nbsp;</div>
+            </div>
+        
+            <!-- Navbar -->
+            <%- include('../partials/header') %>
+     <!-- End Navbar -->
+  <main class="mainProducts">
+    <% //console.log(productTable)%>
+    <section class="filterProducts">
+      <a href="/product/products"><button type="button" class="collectionSelect">Todos os produtos</button></a>
+      <a href="/product/products/mar"><button type="button" class="collectionSelect">Coleção Mar</button></a>
+      <a href="/product/products/terra"><button type="button" class="collectionSelect">Coleção Terra</button></a>
+      <a href="/product/products/luminarias"><button type="button" class="collectionSelect">Decoração e Luminárias</button></a>
+      <div>
+        <input id="searchProducts" type="text" name="searchText" placeholder="Texto para pesquisar">
+        <div id="searchIcon">
+          <i class="fa-solid fa-magnifying-glass icon"></i>
+        </div>
+      </div>
+      
+
+    </section>
+
+    <div id="productDiv"></div>
+
+  <!-- Pasamos el endPoint de la API por medio de el atributo api-data -->  
+    <% console.log(apiEndPoint)%>
+    
+    <div id="apiData" api-data="<%= apiEndPoint%>"></div>  
+
+  <!-- Código para usar sin APIs
+    <div id="initialData"
+        data-products="<%=// JSON.stringify(productTable) %>"
+    ></div>
+  -->
+
+  </main>      
+     <!-- Footer
+    ================================================== -->
+    <%- include('../partials/footer') %> 
+    <!-- End footer -->
+     <!-- JS libraries and scripts -->
+  <script src="/js/jquery-1.11.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap-hover-dropdown.min.js"></script>
+  <script src="/js/jquery.appear.min.js"></script>
+  <script src="/js/jquery.bxslider.min.js"></script>
+  <script src="/js/jquery.owl.carousel.min.js"></script>
+  <script src="/js/jquery.countTo.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.js"></script>
+  <script src="/js/jquery.placeholder.js"></script>
+  <script src="/js/jquery.smoothscroll.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/jquery.waypoints.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/js/jquery.countdown.js"></script>
+  <script src="/js/jquery.navbar-scroll.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="/js/jquery.gmaps.js"></script>
+  <script src="/js/main.js"></script> 
+  <script src="/js/productDiv.js"></script>  
+</body>
+</html>

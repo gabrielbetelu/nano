@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+<body>
+            <!-- Preload the Whole Page -->
+            <div id="preloader">      
+            <div id="loading-animation">&nbsp;</div>
+            </div>
+        
+            <!-- Navbar -->
+            <%- include('../partials/header') %>
+     <!-- End Navbar -->
+    <main class="mainInput">
+        <!-- Collection's table to add, modify o delete color -->
+        <div class="tableInput">
+            <div class="divTableTitle">
+                <h4 class="tableTitle">Cores</h4>
+                <a href="/product/colorsTable" class="addItemText">Adicionar Cor &nbsp<i class="fa-solid fa-plus addItem"></i></a>
+            </div>
+            <table>
+                <tr>
+                    <th>Nome da cor</th>
+                    <th>Descrição</th>
+                    <th>Ação</th>
+                </tr>
+                <% colorItems.forEach((color) => {%>
+                    <tr>
+                        <td><%= color.name  %></td>
+                        <td><%= color.description  %></td>
+                        <td class="actionColumn">
+                            <% if(color.deleted_at == null) {%>
+                                <a href="/product/color/update/<%= color.id%>"><i class="fa-solid fa-pen"></i> Editar</a>
+                                &nbsp &nbsp &nbsp
+                                <a href="/product/color/delete/<%= color.id%>"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                            <%} else {%>
+                                <a href="/product/color/restore/<%= color.id%>">Restaurar</a>
+                            <%}%>
+                        </td>
+                    </tr>
+                <%}) %>
+            </table>
+            <div class="divTableTitle">
+                <h4 class="tableTitle">Cores</h4>
+                <a href="/product/colorsTable" class="addItemText">Adicionar Cor &nbsp<i class="fa-solid fa-plus addItem"></i></a>
+                
+            </div>
+        </div>
+        <!-- Collection's table to add, modify o delete collection -->        
+    </main>
+
+     
+     <!-- Footer
+    ================================================== -->
+    <%- include('../partials/footer') %> 
+    <!-- End footer -->
+     <!-- JS libraries and scripts -->
+  <script src="/js/jquery-1.11.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap-hover-dropdown.min.js"></script>
+  <script src="/js/jquery.appear.min.js"></script>
+  <script src="/js/jquery.bxslider.min.js"></script>
+  <script src="/js/jquery.owl.carousel.min.js"></script>
+  <script src="/js/jquery.countTo.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="/js/jquery.isotope.js"></script>
+  <script src="/js/jquery.placeholder.js"></script>
+  <script src="/js/jquery.smoothscroll.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/jquery.waypoints.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/js/jquery.countdown.js"></script>
+  <script src="/js/jquery.navbar-scroll.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="/js/jquery.gmaps.js"></script>
+  <script src="/js/main.js"></script>   
+</body>
+</html>
