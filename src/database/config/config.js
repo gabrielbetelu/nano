@@ -23,10 +23,11 @@ module.exports = {
     "host": process.env.DB_HOST,
     "dialect": "mysql",
     "port": 3306,
+    "timeout": 60000,
     "pool": {
       max: 5,
       min: 0,
-      acquire: 30000,
+      acquire: 60000,
       idle: 10000
     }
   }
