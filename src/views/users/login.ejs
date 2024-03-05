@@ -30,6 +30,7 @@
                 </div> 
                 <div class="input-container password">
                     <input class="log-control" type="password" name="contrasenia" value="" placeholder=" Password">
+                    <button id="togglePassword" type="button" class="toggle-password">Mostrar senha</button>
                     <p id="errores"  class="error"></p>
                 </div>
                 <div class="recordameLogin">
@@ -41,6 +42,10 @@
                         <p class="errorDatos"> <%= errors.datosMal.msg %> </p>
                         <% } %>
                 </div>
+                <!-- Agregado para mostrar mensajes de error y éxito del front -->
+                <% if(locals.errors && errors.loginError) { %>
+                    <p class="errorDatos"> <%= errors.loginError %> </p>
+                <% } %>
                 <button class="botonLog" type="submit" name="ingresar" value="Ingresar">Entrar</button>                
             </form>
         </div>
@@ -71,8 +76,11 @@
   <script src="/js/jquery.ajaxchimp.min.js"></script>
   <script src="/js/jquery.countdown.js"></script>
   <script src="/js/jquery.navbar-scroll.js"></script>
-  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-  <script src="/js/jquery.gmaps.js"></script>
-  <script src="/js/main.js"></script>   
+<!--  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="/js/jquery.gmaps.js"></script>  -->
+  <script src="/js/main.js"></script> 
+  <script src="/js/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
 </body>
 </html>

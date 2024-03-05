@@ -27,7 +27,11 @@ const mpController = {
     let preference = {
       //metadata: req.body.metadata,
 //      notification_url:"https://4f70-2800-af0-1038-9b86-b062-f72d-45ce-77ff.ngrok-free.app/webhook",
-      notification_url: "https://yeti-patient-dory.ngrok-free.app/webhook",
+
+//      notification_url: "https://yeti-patient-dory.ngrok-free.app/webhook",
+
+      notification_url: `https://${process.env.NOTIFICATION_URL}`,
+
       // **********************************************************************
       // ------- Correr el tunel en ngrok -------
       // ir a carpeta Proyectos y correr ngrok
