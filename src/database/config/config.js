@@ -21,10 +21,6 @@ module.exports = {
     "password": process.env.DB_PASS,
     "database": process.env.DB_NAME,
     "host": process.env.DB_HOST,
-    "dialect": "mysql",
-    "port": 3306,
-    "dialectOptions": {
-      connectTimeout: 120000, // Tiempo de espera en milisegundos
-    }
+    "dialect": "mysql"
   }
 }
